@@ -15,11 +15,25 @@ class UsersRepository {
 
     async getAll() {
         // Open the file this.filename
-        const contents = await fs.promises.readFile(this.filename, { encoding: 'utf-8' });
-        console.log(contents);
+        return JSON.parse(await fs.promises.readFile(this.filename, { encoding: 'utf-8' }));
+        // const contents = await fs.promises.readFile(this.filename, { encoding: 'utf-8' });
+        // const data = JSON.parse(contents);
+        // return data;
     }
 }
 
-const test = () => {
-    const repo = new UsersRepository('users.json');;
-}
+const test = async () => {
+    const repo = new UsersRepository('users.json');
+    const users = await repo.getAll();
+    console.log(users);
+    console.log("done testing!");
+};
+
+test();
+// console.log("MAIN FUNC AFTER TEST");
+
+
+// const myProm = new Promise((resolve, reject) => {
+//     setTimeout(() => {resolve('RESOLVE PROMISE')}, 3000);
+// });
+// const myPromVal = await myProm;
