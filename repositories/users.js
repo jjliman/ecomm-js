@@ -20,6 +20,10 @@ class UsersRepository {
         // const data = JSON.parse(contents);
         // return data;
     }
+
+    async create(attrs) {
+        
+    }
 }
 
 const test = async () => {
