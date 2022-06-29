@@ -1,15 +1,17 @@
 [
   {
-    "email": "test@test.com"
-  },
-  {
-    "email": "justin@justin",
-    "password": "mypassword",
-    "id": "2838e7c4"
-  },
-  {
     "email": "cow@cow",
-    "password": "cows",
-    "id": "ef309035"
+    "password": "3fe1e611a532ed8de7155ca23c573266f4da644e7a0f0c41492e25ef9ee4b3d22792d976f7a758c2a2bd30ef0e8ecdabdcb61c26b4677cba23161d5f773b0818.567b9e6301b3ce2b",
+    "id": "62490743"
+  },
+  {
+    "email": "cows@cows.com",
+    "password": "eb0fe9c1837d4965be2d0adbb4ee85e9de0b315eed7fda9e1c0622870972837cd3672252041e3a9208c367d1e1f1754ac4c98d70d2ee5d886acf471fba314316.6a69079c08223d45",
+    "id": "1d689289"
+  },
+  {
+    "email": "moo@moo",
+    "password": "c0f7b94e4a6852808a00c64b5f1508b92ae45b39f748252d8ba76f81830b9b4d286b0615c038cc84ba996c9bf0628dae3e4385c1757c86a117c18805d4ee26dd.981fc6cd1041850e",
+    "id": "99a8608a"
   }
 ]
