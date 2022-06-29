@@ -6,5 +6,10 @@
     "email": "justin@justin",
     "password": "mypassword",
     "id": "2838e7c4"
+  },
+  {
+    "email": "cow@cow",
+    "password": "cows",
+    "id": "ef309035"
   }
 ]
