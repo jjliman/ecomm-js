@@ -64,7 +64,7 @@ class UsersRepository {
 
 const test = async () => {
     const repo = new UsersRepository('users.json');
-    await repo.delete('a3d167a1');
+    await repo.update('dzxczxc', { password: '123456789' });
     console.log("done testing!");
 };
 
