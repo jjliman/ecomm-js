@@ -1,12 +1,12 @@
+// const bodyParser = require('body-parser'); // Not needed!
+
 const express = require('express');
-const bodyParser = require('body-parser'); // Not needed!
-const cookieSession = require('cookie-session');
 const usersRepo = require('../../repositories/users');
 
-const app = express();
+const router = express.Router();
 
 
-app.get('/signup', (req, res) => {
+router.get('/signup', (req, res) => {
     res.send(`
         <div>
             Your id is: ${req.session.userId}
@@ -39,7 +39,7 @@ app.get('/signup', (req, res) => {
 //     }
 // };
 
-app.post('/signup', async (req, res) => {
+router.post('/signup', async (req, res) => {
     // console.log(req.body);
     const { email, password, passwordConfirmation } = req.body;
 
@@ -60,12 +60,12 @@ app.post('/signup', async (req, res) => {
     res.send('Account created!!');
 });
 
-app.get('/signout', (req, res) => {
+router.get('/signout', (req, res) => {
     req.session = null;
     res.send('You are logged out!');
 });
 
-app.get('/signin', (req, res) => {
+router.get('/signin', (req, res) => {
     res.send(`
         <div>
             <form method="POST">
@@ -77,7 +77,7 @@ app.get('/signin', (req, res) => {
     `);
 });
 
-app.post('/signin', async (req, res) => {
+router.post('/signin', async (req, res) => {
     const { email, password } = req.body;
     const user = await usersRepo.getOneBy({ email });
 
@@ -94,3 +94,5 @@ app.post('/signin', async (req, res) => {
     req.session.userId = user.id;
     res.send('You are signed in!!');
 });
+
+module.exports = router;

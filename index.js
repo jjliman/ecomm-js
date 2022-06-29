@@ -1,7 +1,7 @@
 const express = require('express');
 const bodyParser = require('body-parser'); // Not needed!
 const cookieSession = require('cookie-session');
-const usersRepo = require('./repositories/users');
+const authRouter = require('./routes/admin/auth')
 
 const app = express();
 
@@ -11,6 +11,9 @@ app.use(express.urlencoded({ extended: true }));
 app.use(cookieSession( {
     keys: ['aascohjzc3934901odc']
 }));
+
+// IMPORTANT! Add router after middleware
+app.use(authRouter);
 
 
 app.listen(3000, () => {
