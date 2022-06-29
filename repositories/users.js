@@ -77,14 +77,17 @@ class UsersRepository {
     }
 }
 
-const test = async () => {
-    const repo = new UsersRepository('users.json');
-    const user = await repo.getOneBy({ password: '123456789', id: '4e2f6d98', swag: "TRUE" });
-    console.log(user);
-    console.log("done testing!");
-};
 
-test();
+module.exports = new UsersRepository('users.json');  
+
+// const test = async () => {
+//     const repo = new UsersRepository('users.json');
+//     const user = await repo.getOneBy({ password: '123456789', id: '4e2f6d98', swag: "TRUE" });
+//     console.log(user);
+//     console.log("done testing!");
+// };
+
+// test();
 // console.log("MAIN FUNC AFTER TEST");
 
 
