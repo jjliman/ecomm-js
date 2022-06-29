@@ -1,5 +1,6 @@
 const express = require('express');
 const bodyParser = require('body-parser'); // Not needed!
+const usersRepo = require('./repositories/users');
 
 const app = express();
 
@@ -39,9 +40,22 @@ app.get('/', (req, res) => {
 //     }
 // };
 
-app.post('/', (req, res) => {
-    console.log(req.on, req.body, req.method);
-    console.log('POST REQUEST HANDLER');
+app.post('/', async (req, res) => {
+    // console.log(req.body);
+    const { email, password, passwordConfirmation } = req.body;
+
+    const existingUser = await usersRepo.getOneBy({ email });
+    if (existingUser) {
+        return res.send('Email in use!');
+    }
+
+    if (password !== passwordConfirmation) {
+        return res.send('Passwords must match!');
+    }
+
+    const user = await usersRepo.create({ email, password });
+
+    // console.log('POST REQUEST HANDLER');
     res.send('Account created!!');
 });
 
