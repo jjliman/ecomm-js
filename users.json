@@ -33,5 +33,15 @@
     "email": "mail@mail.com",
     "password": "58b53a4a3f673f77f591e61b9c47b798c37e360cbf239c626229c13d608d574eb3aeb2cd7b870107deacef442a0c060eb18bf25e123a63afb76edec90e1efe4a.c6771a981db810ff",
     "id": "f6e944ea"
+  },
+  {
+    "email": "newmail@newmail.com",
+    "password": "a3c41eaf52d48f4e5652f0f93772c9f6a8b439d7936ae47310d3e312e5f50604c5c209f4796410f9bc0e32e54145aec8c6d4f1734be03682c2f6ff1eb49b7e50.55d68daa52b6ab7b",
+    "id": "c5d09644"
+  },
+  {
+    "email": "newsmail@mail.com",
+    "password": "13b461a71f772e037519c4a50e5bbca69349cdb3560a572c958ef0966468eca483f63ef5610b5ece89c0a067eac246b1ce300ebeda0195319b0df9580cbb2337.5f06997c280b6f4a",
+    "id": "9076b76f"
   }
 ]
