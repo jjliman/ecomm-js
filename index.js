@@ -5,7 +5,7 @@ const authRouter = require('./routes/admin/auth')
 
 const app = express();
 
-
+app.use(express.static('public'));
 // Newer version of express has urleconded, so can just do express(NOT app!).urlencoded(), no need bodyParser
 app.use(express.urlencoded({ extended: true }));
 app.use(cookieSession( {
