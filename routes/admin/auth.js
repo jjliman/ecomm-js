@@ -12,7 +12,7 @@ const router = express.Router();
 
 
 router.get('/signup', (req, res) => {
-    res.send(signupTemplate({ req }));
+    res.send(signupTemplate({}));
 });
 
 // const bodyParser = (req, res, next) => {
