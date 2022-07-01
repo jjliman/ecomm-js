@@ -15,25 +15,6 @@ router.get('/signup', (req, res) => {
     res.send(signupTemplate({}));
 });
 
-// const bodyParser = (req, res, next) => {
-//     if (req.method === 'POST') {
-//         req.on('data', (data) => {
-//             const parsed = data.toString('utf8').split('&');
-//             // console.log(parsed);
-//             const formData = {};
-//             for (let pair of parsed) {
-//                 const [key, value] = pair.split('=');
-//                 // console.log(`${key} is ${value}`)
-//                 formData[key] = value;
-//             }
-//             req.body = formData;
-//             next();
-//         });
-//     } else {
-//         next();
-//     }
-// };
-
 router.post(
     '/signup',
     [requireEmail, requirePassword, requirePasswordConfirmation], 
@@ -66,10 +47,29 @@ router.post(
         const { email } = req.body;
         const user = await usersRepo.getOneBy({ email });
 
-
         req.session.userId = user.id;
         res.redirect('/admin/products');
 });
 
-
 module.exports = router;
+
+
+
+// const bodyParser = (req, res, next) => {
+//     if (req.method === 'POST') {
+//         req.on('data', (data) => {
+//             const parsed = data.toString('utf8').split('&');
+//             // console.log(parsed);
+//             const formData = {};
+//             for (let pair of parsed) {
+//                 const [key, value] = pair.split('=');
+//                 // console.log(`${key} is ${value}`)
+//                 formData[key] = value;
+//             }
+//             req.body = formData;
+//             next();
+//         });
+//     } else {
+//         next();
+//     }
+// };

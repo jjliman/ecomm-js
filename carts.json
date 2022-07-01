@@ -1,1 +1,19 @@
-[]
+[
+  {
+    "items": [
+      {
+        "id": "62b582ba",
+        "quantity": 3
+      },
+      {
+        "id": "ac3d7258",
+        "quantity": 2
+      },
+      {
+        "id": "48c5e531",
+        "quantity": 2
+      }
+    ],
+    "id": "a02f797c"
+  }
+]
