@@ -1,8 +1,10 @@
 const express = require('express');
 const bodyParser = require('body-parser'); // Not needed!
 const cookieSession = require('cookie-session');
-const authRouter = require('./routes/admin/auth')
-const productsRouter = require('./routes/admin/products')
+const authRouter = require('./routes/admin/auth');
+const adminProductsRouter = require('./routes/admin/products');
+const productsRouter = require('./routes/products');
+const products = require('./repositories/products');
 
 const app = express();
 
@@ -15,6 +17,7 @@ app.use(cookieSession( {
 
 // IMPORTANT! Add router after middleware
 app.use(authRouter);
+app.use(adminProductsRouter);
 app.use(productsRouter);
 
 
